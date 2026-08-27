@@ -13,7 +13,11 @@ class AgendaSeeder extends Seeder
     public function run(): void
     {
         DB::table('agendas')->insert([
-            // 27 Agustus 2026
+            /*
+            |--------------------------------------------------------------------------
+            | 1. Banyak agenda pada hari yang sama
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Rapat Pagi Tim',
                 'description' => 'Rapat koordinasi pagi.',
@@ -87,7 +91,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-08-27 17:00:00',
             ],
 
-            // Agenda jangka panjang
+            /*
+            |--------------------------------------------------------------------------
+            | 2. Agenda sangat panjang >= 7 hari
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Pengembangan Sistem Jangka Panjang',
                 'description' => 'Pengembangan sistem informasi secara bertahap.',
@@ -113,7 +121,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-09-25 17:00:00',
             ],
 
-            // 28 Agustus 2026
+            /*
+            |--------------------------------------------------------------------------
+            | 3. Agenda satu hari dengan durasi sangat pendek
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Pengumuman',
                 'description' => 'Pengumuman singkat.',
@@ -133,33 +145,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-08-28 10:10:00',
             ],
 
-            // Duplikasi sesuai data SQL asli
-            [
-                'agenda_name' => 'Pengembangan Sistem Jangka Panjang',
-                'description' => 'Pengembangan sistem informasi secara bertahap.',
-                'start_date' => '2026-08-10 08:00:00',
-                'end_date' => '2026-08-18 17:00:00',
-            ],
-            [
-                'agenda_name' => 'Audit dan Evaluasi Sistem',
-                'description' => 'Audit dan evaluasi sistem yang sedang berjalan.',
-                'start_date' => '2026-08-20 08:00:00',
-                'end_date' => '2026-08-28 17:00:00',
-            ],
-            [
-                'agenda_name' => 'Migrasi Data Project',
-                'description' => 'Proses migrasi dan validasi data project.',
-                'start_date' => '2026-09-01 08:00:00',
-                'end_date' => '2026-09-10 17:00:00',
-            ],
-            [
-                'agenda_name' => 'Penyusunan Dokumentasi Sistem',
-                'description' => 'Penyusunan dokumentasi sistem secara menyeluruh.',
-                'start_date' => '2026-09-14 08:00:00',
-                'end_date' => '2026-09-25 17:00:00',
-            ],
-
-            // 31 Agustus 2026
+            /*
+            |--------------------------------------------------------------------------
+            | 4. Judul agenda sangat panjang
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Rapat Koordinasi Pengembangan Sistem Informasi Perencanaan Pembangunan Daerah',
                 'description' => 'Rapat koordinasi mengenai pengembangan sistem informasi.',
@@ -179,7 +169,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-08-31 12:00:00',
             ],
 
-            // 3-4 September 2026
+            /*
+            |--------------------------------------------------------------------------
+            | 5. Deskripsi sangat panjang
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Workshop Pengembangan Aplikasi',
                 'description' => 'Workshop ini membahas proses pengembangan aplikasi mulai dari analisis kebutuhan, perancangan database, implementasi backend menggunakan Laravel, integrasi API, pengembangan frontend, pengujian aplikasi, hingga evaluasi hasil implementasi.',
@@ -193,7 +187,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-09-04 12:00:00',
             ],
 
-            // 7 September 2026 - Testing overlap
+            /*
+            |--------------------------------------------------------------------------
+            | 6. Agenda overlap
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Rapat A',
                 'description' => 'Agenda yang overlap dengan Rapat B.',
@@ -219,7 +217,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => '2026-09-07 13:00:00',
             ],
 
-            // Agenda tanpa end_date
+            /*
+            |--------------------------------------------------------------------------
+            | 7. Agenda tanpa end_date
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Pengumuman Internal',
                 'description' => 'Agenda tanpa waktu selesai.',
@@ -239,7 +241,11 @@ class AgendaSeeder extends Seeder
                 'end_date' => null,
             ],
 
-            // Agenda lintas hari
+            /*
+            |--------------------------------------------------------------------------
+            | 8. Agenda melewati tengah malam
+            |--------------------------------------------------------------------------
+            */
             [
                 'agenda_name' => 'Rapat Malam',
                 'description' => 'Agenda dimulai malam dan selesai setelah tengah malam.',
