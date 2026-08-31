@@ -5,6 +5,9 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css" rel="stylesheet">
     <title>Agenda Calendar</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite('resources/js/app.js')
+    @endif
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -251,7 +254,6 @@
         }
     </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/locales-all.global.min.js"></script>
 <body>
@@ -348,7 +350,9 @@
         </div>
 
     </div>
-    <script>
+    <script type="module">
+
+    await window.jQueryReady;
 
     $(document).ready(function() {
         var calendarEl = document.getElementById('calendar');

@@ -20,4 +20,4 @@ php artisan migrate --seed
 ### 5. Menjalankan web
 php artisan serve
 
-masuk ke "http://127.0.0.1:8000/agenda" untuk membuka kalender.
+masuk ke "http://127.0.0.1:8000/calender" untuk membuka kalender.
